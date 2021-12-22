@@ -1,0 +1,57 @@
+	/**
+		Ruanyu Jian
+	*/    
+	#canvas {
+        /*width: 580px;*/
+        /*height: 360px;*/
+        /*background-color: #333;*/
+        /*color: #eee;*/
+        font-size:30px;
+        padding: 10px;
+        line-height: 50px;
+    }
+    /*carousel*/
+    /**{ margin:0; padding:0;}*/
+    body{
+        background:#000;
+        overflow:hidden;
+    }
+    #perspective{
+        perspective:800px;
+    }
+    #wrap{
+        width:120px;  /*133:200  4:6  */
+        height:180px;
+        margin:0 auto;
+        position:relative;
+        margin-top: 100px!important;
+        transform-style:preserve-3d;
+        transform:rotateX(-10deg) rotateY(0deg);
+
+    }
+    #wrap img{
+        width:100%;
+        height:100%;
+        position:absolute;
+        border-radius:1px;
+
+        transform:rotateY(0deg) translateZ(0px);
+        -webkit-box-reflect:below 5px -webkit-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%);
+    }
+    #wrap p{
+        width:1200px;
+        height:1200px;
+        background:-webkit-radial-gradient(center center,600px 600px,rgba(244,23,234,0.2),rgba(0,0,0,0));
+        border-radius:100%;
+        position:absolute;
+        left:50%;
+        top:102%;
+        margin-left:-600px;
+        margin-top:-600px;
+        transform:rotateX(90deg);
+    }
+    /*font-family: Consolas, serif;*/
+	.snow-box{
+		box-shadow: 0 8px 20px #e37bf9;
+	
+	}

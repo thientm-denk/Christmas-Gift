@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>please enter your title</title>
+		<meta charset="utf-8">
+		<style type='text/css'>
+			*{ margin:0; padding:0;}
+			body{
+				background:#000;
+				overflow:hidden;
+			}
+			#perspective{
+				perspective:800px;
+			}
+			#wrap{
+				width:120px;  /*133:200  4:6  */
+				height:180px;
+				margin:0 auto;
+				position:relative;
+
+				
+				transform-style:preserve-3d;
+				transform:rotateX(-10deg) rotateY(0deg);
+				
+			}
+			#wrap img{
+				width:100%;
+				height:100%;
+				position:absolute;
+				border-radius:1px;
+				
+				transform:rotateY(0deg) translateZ(0px);
+				
+				-webkit-box-reflect:below 5px -webkit-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%);
+			}
+			#wrap p{
+				width:1200px;
+				height:1200px;
+				background:-webkit-radial-gradient(center center,600px 600px,rgba(244,23,234,0.2),rgba(0,0,0,0));
+				border-radius:100%;
+				position:absolute;
+				left:50%;
+				top:102%;
+				margin-left:-600px;
+				margin-top:-600px;
+				transform:rotateX(90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="perspective">
+			<div id='wrap'>
+				<img src="img/1.png" />
+				<img src="img/2.png" />
+				<img src="img/3.png" />
+				<img src="img/4.png" />
+				<img src="img/5.png" />
+				<img src="img/6.png" />
+				<img src="img/1.png" />
+				<img src="img/2.png" />
+				<img src="img/3.png" />
+				<img src="img/4.png" />
+				<img src="img/5.png" />
+
+				<p></p>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			window.onload = function(){
+				var oWrap = document.getElementById('wrap');
+				var oImg = oWrap.getElementsByTagName('img');
+				var oImgLength = oImg.length;
+				var Deg = 360 / oImgLength;
+				var nowX , nowY , lastX , lastY , minusX = 0, minusY = 0;
+				var roY = 0 , roX = -10;
+				var timer;
+
+				for ( var i=0;i<oImgLength;i++ )
+				{
+					oImg[i].style.transform = 'rotateY('+ i*Deg +'deg) translateZ(350px)';
+					oImg[i].style.transition = 'transform 1s '+ (oImgLength-1-i)*0.1 +'s';
+
+				}
+
+				mTop();
+
+				window.onresize = mTop;
+
+				function mTop(){
+					var wH = document.documentElement.clientHeight;
+					oWrap.style.marginTop = wH / 2 - 180 + 'px';
+				}
+				
+				
+				document.onmousedown = function(ev){
+					ev = ev || window.event;
+
+					
+					lastX = ev.clientX;
+					lastY = ev.clientY;
+					
+					
+					this.onmousemove = function(ev){
+						ev = ev || window.event;
+
+						clearInterval( timer );
+
+						nowX = ev.clientX; // clientX 
+						nowY = ev.clientY; // clientY 
+
+					
+						minusX = nowX - lastX; 
+						minusY = nowY - lastY;
+						
+						
+						roY += minusX*0.2; // roY = roY + minusX*0.2;
+						roX -= minusY*0.1;
+	 
+						oWrap.style.transform = 'rotateX('+ roX +'deg) rotateY('+ roY +'deg)';
+						
+						/*
+						
+						var oDiv = document.createElement('div');
+						oDiv.style.cssText = 'width:5px;height:5px;background:red;position:fixed;left:'+nowX+'px;top:'+nowY+'px';
+						this.body.appendChild(oDiv);
+						*/
+						
+						
+						lastX = nowX;
+						lastY = nowY;
+
+					}
+					
+					this.onmouseup = function(){
+						this.onmousemove = null;
+						timer = setInterval(function(){
+							minusX *= 0.95;
+							minusY *= 0.95;
+							roY += minusX*0.2; // roY = roY + minusX*0.2;
+							roX -= minusY*0.1;
+							oWrap.style.transform = 'rotateX('+ roX +'deg) rotateY('+ roY +'deg)';
+
+							if ( Math.abs(minusX)<0.1 && Math.abs( minusY )<0.1 )
+							{
+								clearInterval( timer );
+							}
+							console.log( minusX );
+						},13);
+					}
+					return false;
+				}
+			}
+
+		</script>
+	</body>
+</html>
