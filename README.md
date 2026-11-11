@@ -1,7 +1,7 @@
 # Christmas-Gift
-- This website can be a little present for your friend in Chirstmas.
-- Only use on PC or Laptop, cannot be use on phone.
+- A little Christmas present website: https://thientm-denk.github.io/Christmas-Gift/
+- The root `index.html` redirects to `index_christmas.html`.
+- Works on desktop and mobile (responsive, touch-friendly 3D photo ring, tap to open the gift so music can play on phones).
+- Music: `audio/50-cuoc-goi-nho.mp3`. Photos are served from compressed copies in `images/web/`.
 
-
-
-All the credit belong to Ruandejuxian.
+Original idea credit: Ruandejuxian.

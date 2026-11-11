@@ -1,149 +1,187 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-    <!-- META TAGS -->
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- STYLES -->
-    <link href="./org/cpts/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="./org/cpts/css/fullpage.css" rel="stylesheet" type="text/css">
-    <link href="./org/cpts/css/style_c.css" rel="stylesheet" type="text/css">
-    <link href="./org/cpts/css/custom.css" rel="stylesheet" type="text/css">
-	<link href="./css/christmas.css" rel="stylesheet" type="text/css">
-    <!-- SITE TITLE -->
-    <link href="./org/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="./org/loding/css/fakeloader.css">
-     <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="./images/icons/favicon.ico">	
-    <link rel="apple-touch-icon" href="<!URL::asset('images/icon/apple-touch-icon.png')>">
-    <link rel="apple-touch-icon" sizes="72x72" href="<!URL::asset('images/icon/apple-touch-icon-72x72.png')>">
-    <link rel="apple-touch-icon" sizes="114x114" href="<!URL::asset('images/icon/apple-touch-icon-114x114.png')>">
-    <title>Love</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0710">
+    <meta name="description" content="Một món quà Giáng sinh nhỏ dành cho em.">
+    <title>Merry Christmas, Baby</title>
+    <link rel="icon" href="./images/icons/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Infant:ital,wght@0,400;0,600;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="./css/christmas.css" rel="stylesheet">
 </head>
-
 <body>
-<div class="fakeloader"></div>
-<!-- AUDIO PLAYER -->
-<audio class="audio-player" autoplay loop>
-    <source src="./org/cpts/audio/Queen Of The Night.mp3" type="audio/mpeg">
+
+<!-- Snow / hearts falling behind everything -->
+<canvas id="snow" class="snow" aria-hidden="true"></canvas>
+
+<audio id="bgm" loop preload="metadata">
+    <source src="./audio/50-cuoc-goi-nho.mp3" type="audio/mpeg">
 </audio>
 
-<!-- BACKGROUND CONTAINER -->
-<div class="bg-container snowy">
-    <!-- GLASS BALL -->
-    <div class="glass-ball rotate"></div>
-    <!-- TOP LIGHT -->
-    <div class="top-light"></div>
-    <!-- PAGE CONTENT -->
-    <div class="page-content">
-        <div class="fullpage">
-            <!-- HOME SECTION -->
-            <div id="home" class="section active">
-                <!-- TITLE -->
-                <h1 class="snow-text">BayBy，I love you !</h1>
-                <!-- COUNTER -->
-                <!--<div class="snow-box">-->
-                <!---->
-                <!--<div class="countdown" data-date="December 25 2019 00:00:00"></div>-->
-                <!--</div>-->
-                <div class="snow-box">
-
-                    <div class="countdown" data-date="">
-                        <div class="countdown-box">
-                            <h2 class="countdown-number" id="t_d">00</h2>
-                            <h4 class="countdown-title">days</h4>
-                        </div>
-                        <div class="countdown-box">
-                            <h2 class="countdown-number" id="t_h">00</h2>
-                            <h4 class="countdown-title">hours</h4>
-                        </div>
-                        <div class="countdown-box">
-                            <h2 class="countdown-number" id="t_m">00</h2>
-                            <h4 class="countdown-title">minutes</h4>
-                        </div>
-                        <div class="countdown-box">
-                            <h2 class="countdown-number" id="t_s">00</h2>
-                            <h4 class="countdown-title">seconds</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- INFO SECTION -->
-            <div id="info" class="section">
-                <div class="container">
-                    <!-- INFO TEXT -->
-                    <div class="shadow-box">
-                        <h2>Em trông thật đẹp khi cười</h2>
-                        <p>
-                            Nụ cười của em khiến những áng mây đen cũng phải thẹn thùng ngại ngùng ghen tỵ mà lững lờ trôi đi, mở ra một bầu trời đầy tia nắng ấm. Nó là khung cảnh đẹp nhất mà anh từng thấy</p>
-                    </div>
-                    <!--begin carousel -->
-
-                    <div id="perspective">
-                        <div id='wrap'>
-                            <img src="./images/lq1.jpg" />
-                            <img src="./images/lq2.jpg" />
-                            <img src="./images/lq3.jpg" />
-                            <img src="./images/lq4.jpg" />
-                            <img src="./images/lq5.jpg" />
-                            <img src="./images/lq6.jpg" />
-                            <img src="./images/lq7.jpg" />
-                            <img src="./images/lq8.jpg" />
-                            <img src="./images/lq9.jpg" />
-                            <img src="./images/lq10.jpg" />
-                            <p></p>
-                        </div>
-                    </div>
-                    <!--end carousel-->
-                </div>
-            </div>
-            <!-- CONTACT SECTION -->
-            <div id="contact" class="section">
-                <div class="container">
-                    <!-- CONTACT TEXT -->
-                    <div class="shadow-box" id="canvas">
-                        <h3>Anh muốn nói với em vài điều!</h3>
-                    </div>
-                    <!-- CONTACT FORM -->
-                    <div class="contact">
-                        <div class="form-group">
-                            <input name="submit" width="40px" class="btn-submit" type="button" id="curs" value="click" >
-                            <i class="fa fa-hand-o-up"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- CONTACT SECTION -->
-            <div id="contact" class="section">
-                <div class="container">
-                    <!-- CONTACT TEXT -->
-                    <div class="shadow-box">
-                        <h3>Con Chó yêu Bột</h3>
-                        <p>Chúc em yêu giáng sinh vui vẻ</p>
-                    </div>
-                    <!-- CONTACT FORM -->
-                </div>
-            </div>
-        </div>
+<!-- GIFT GATE: needed so music can start on mobile (browsers block autoplay) -->
+<div id="gate" class="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+    <div class="gate__inner">
+        <svg class="gift" viewBox="0 0 120 120" aria-hidden="true">
+            <defs>
+                <linearGradient id="box" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#ef4444"/>
+                    <stop offset="1" stop-color="#9f1239"/>
+                </linearGradient>
+            </defs>
+            <g class="gift__lid">
+                <path d="M60 30 C48 10 30 14 36 26 C40 33 52 31 60 30 Z" fill="none" stroke="#f5c66b" stroke-width="5" stroke-linejoin="round"/>
+                <path d="M60 30 C72 10 90 14 84 26 C80 33 68 31 60 30 Z" fill="none" stroke="#f5c66b" stroke-width="5" stroke-linejoin="round"/>
+                <rect x="14" y="30" width="92" height="20" rx="4" fill="url(#box)"/>
+                <rect x="53" y="30" width="14" height="20" fill="#f5c66b"/>
+            </g>
+            <rect x="20" y="50" width="80" height="58" rx="4" fill="url(#box)"/>
+            <rect x="53" y="50" width="14" height="58" fill="#f5c66b"/>
+        </svg>
+        <p class="eyebrow">Giáng sinh này</p>
+        <h1 id="gate-title" class="gate__title">Có một món quà nhỏ<br>dành cho em</h1>
+        <button id="open-gift" class="btn btn--primary" type="button">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+            Mở quà
+        </button>
+        <p class="gate__hint">Bật âm lượng lên nhé</p>
     </div>
 </div>
 
-<!-- SCRIPTS  -->
-<script type="text/javascript" src="./org/cpts/js/jquery.min.js"></script>
-<script src="./org/loding/js/fakeloader.min.js"></script>
-<script type="text/javascript">
-	$(".fakeloader").fakeLoader({
-        timeToHide:4000,
-        bgColor:"#3498db",
-        spinner:"spinner4"
-	});
-</script>
-<script type="text/javascript" src="./org/cpts/js/jquery.fullpage.min.js"></script>
-<script type="text/javascript" src="./org/cpts/js/three.canvas.js"></script>
-<script type="text/javascript" src="./org/cpts/js/script.js"></script>
-<script type="text/javascript" src="./org/cpts/js/custom.js"></script>
-<script src="./org/printer-master/javascript/printer.js"></script>
-<script src="./org/jquery-hb/js/snowfall.jquery.js"></script>
+<!-- Floating controls -->
+<button id="music" class="music" type="button" aria-pressed="false" aria-label="Bật nhạc">
+    <span class="music__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <svg class="icon music__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg>
+</button>
+
+<nav class="dots" aria-label="Các phần của trang">
+    <a href="#home" aria-label="Trang đầu"><span></span></a>
+    <a href="#smile" aria-label="Nụ cười của em"><span></span></a>
+    <a href="#letter" aria-label="Lá thư"><span></span></a>
+    <a href="#wish" aria-label="Lời chúc"><span></span></a>
+</nav>
+
+<main id="main" class="scroller" tabindex="-1">
+
+    <!-- 1. HOME -->
+    <section id="home" class="section hero">
+        <div class="lights" id="lights" aria-hidden="true"></div>
+        <div class="container">
+            <p class="eyebrow reveal">Merry Christmas</p>
+            <h2 class="script hero__title reveal">Baby, I love you!</h2>
+            <p class="lead reveal">Anh đã thương em được</p>
+
+            <div class="counter reveal" role="timer" aria-live="off">
+                <div class="counter__box"><span class="counter__num" id="t_d">0</span><span class="counter__label">ngày</span></div>
+                <div class="counter__box"><span class="counter__num" id="t_h">00</span><span class="counter__label">giờ</span></div>
+                <div class="counter__box"><span class="counter__num" id="t_m">00</span><span class="counter__label">phút</span></div>
+                <div class="counter__box"><span class="counter__num" id="t_s">00</span><span class="counter__label">giây</span></div>
+            </div>
+            <p class="since reveal">kể từ 25 · 06 · 2020</p>
+        </div>
+        <a class="scroll-cue" href="#smile" aria-label="Xem tiếp">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+    </section>
+
+    <!-- 2. SMILE + 3D GALLERY -->
+    <section id="smile" class="section smile">
+        <div class="container">
+            <div class="card reveal">
+                <h2 class="script card__title">Em trông thật đẹp khi cười</h2>
+                <p>Nụ cười của em khiến những áng mây đen cũng phải thẹn thùng ngại ngùng ghen tỵ mà lững lờ trôi đi, mở ra một bầu trời đầy tia nắng ấm. Nó là khung cảnh đẹp nhất mà anh từng thấy.</p>
+            </div>
+        </div>
+
+        <div class="stage reveal" id="stage" aria-label="Album ảnh, kéo để xoay, chạm để xem lớn">
+            <div class="ring" id="ring">
+                <figure><img src="./images/web/lq1.webp"  alt="Ảnh kỷ niệm 1"  width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq2.webp"  alt="Ảnh kỷ niệm 2"  width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq3.webp"  alt="Ảnh kỷ niệm 3"  width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq4.webp"  alt="Ảnh kỷ niệm 4"  width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq5.webp"  alt="Ảnh kỷ niệm 5"  width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq6.webp"  alt="Ảnh kỷ niệm 6"  width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq7.webp"  alt="Ảnh kỷ niệm 7"  width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq8.webp"  alt="Ảnh kỷ niệm 8"  width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq9.webp"  alt="Ảnh kỷ niệm 9"  width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq10.webp" alt="Ảnh kỷ niệm 10" width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq11.webp" alt="Ảnh kỷ niệm 11" width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq12.webp" alt="Ảnh kỷ niệm 12" width="720" height="1080" decoding="async"></figure>
+                <figure><img src="./images/web/lq13.webp" alt="Ảnh kỷ niệm 13" width="720" height="1080" decoding="async"></figure>
+            </div>
+            <div class="floor" aria-hidden="true"></div>
+        </div>
+        <p class="hint reveal">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0M14 10V4a2 2 0 0 0-4 0v2M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+            Kéo để xoay · chạm vào ảnh để xem lớn
+        </p>
+    </section>
+
+    <!-- 3. LETTER (heart typing) -->
+    <section id="letter" class="section letter">
+        <div class="container">
+            <h2 class="script section__title reveal">Anh muốn nói với em vài điều</h2>
+
+            <div class="heart-stage" id="heartStage">
+                <canvas id="heartCanvas" class="heart-canvas" aria-hidden="true"></canvas>
+
+                <button id="openLetter" class="envelope reveal" type="button">
+                    <span class="envelope__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    </span>
+                    <span class="envelope__text">Chạm để mở thư</span>
+                </button>
+
+                <!-- Full text for screen readers; the animated copy below is aria-hidden -->
+                <p class="sr-only" id="letterFull"></p>
+                <div class="typed" id="typed" aria-hidden="true"></div>
+            </div>
+
+            <div class="letter__actions">
+                <button id="skipTyping" class="btn btn--ghost" type="button" hidden>Hiện hết</button>
+                <a id="toWish" class="btn btn--primary" href="#wish" hidden>
+                    Còn một điều nữa
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. WISH -->
+    <section id="wish" class="section wish">
+        <div class="container">
+            <div class="card card--center reveal">
+                <p class="eyebrow">Từ anh, với tất cả yêu thương</p>
+                <h2 class="script wish__title">Con Chó yêu Bột</h2>
+                <p class="wish__text">Chúc em yêu Giáng sinh vui vẻ</p>
+                <button id="sendLove" class="btn btn--primary" type="button">
+                    <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    Thả tim
+                </button>
+            </div>
+        </div>
+        <footer class="footer">Merry Christmas ✦ 2026</footer>
+    </section>
+</main>
+
+<!-- Photo viewer -->
+<dialog id="viewer" class="viewer" aria-label="Xem ảnh">
+    <img id="viewerImg" src="" alt="">
+    <button class="viewer__btn viewer__close" type="button" data-act="close" aria-label="Đóng">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <button class="viewer__btn viewer__prev" type="button" data-act="prev" aria-label="Ảnh trước">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <button class="viewer__btn viewer__next" type="button" data-act="next" aria-label="Ảnh sau">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+</dialog>
+
+<div id="fx" class="fx" aria-hidden="true"></div>
+
 <script src="./js/christmas.js"></script>
 </body>
 </html>
